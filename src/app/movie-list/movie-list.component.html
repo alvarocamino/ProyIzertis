@@ -1,0 +1,11 @@
+<div class="search-container">
+  <input type="text" [(ngModel)]="query" placeholder="Buscar películas">
+  <button (click)="searchMovies()">Buscar</button>
+</div>
+
+<div class="movie-list">
+  <div *ngFor="let movie of movies" class="movie-card" (click)="showMovieDetails(movie.imdbID)">
+      <img [src]="movie.Poster" alt="{{ movie.Title }}">
+      <p>{{ movie.Title }}</p>
+  </div>
+</div>
